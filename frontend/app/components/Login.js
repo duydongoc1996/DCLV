@@ -8,6 +8,8 @@ TouchableOpacity,
 AsyncStorage,
 View ,
 } from 'react-native';
+import {Button, List, ListItem, Icon, Left, Body, Right } from 'native-base';
+
 import {StackNavigator} from "react-navigation";
 
 export default class Login extends React.Component {
@@ -45,14 +47,26 @@ export default class Login extends React.Component {
            <TouchableOpacity
            style={styles.btn}
            onPress={this.login}>
-           <Text>Log in </Text>
+           <Text>Sign In </Text>
            </TouchableOpacity>
-            <Text style={{fontSize:30}}> OR </Text>
-            <TouchableOpacity
-           style={styles.btn}
-          onPress={()=>{this.props.navigation.navigate('Register');}}>
-           <Text>Register </Text>
-           </TouchableOpacity>
+           <List>
+            <ListItem icon>
+              <Left/>
+               
+              
+              <Body>
+              <Text style={{fontSize:15}}> Do you have Account ? </Text>
+              
+              </Body>
+              <Right>
+                <Button transparent dark>
+               
+            <Text>Sign up </Text>
+          </Button>
+              </Right>
+                
+            </ListItem>
+            </List>
       </View>
       </KeyboardAvoidingView>
     );
@@ -85,7 +99,7 @@ const styles=StyleSheet.create({
   },
   textInput:{
   	alignSelf:'stretch',
-  	padding:16,
+  	padding:10,
   	marginBottom:20,
   	backgroundColor:'#fff',
 
@@ -93,7 +107,7 @@ const styles=StyleSheet.create({
   btn:{
 alignSelf:'stretch',
 backgroundColor:'#81c853',
-padding:20,
+padding:10,
 alignItems:'center',
   }
 
